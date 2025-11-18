@@ -1,81 +1,100 @@
 <template>
-    <div class="card">
-        <img :src="product.thumbnail" :alt="product.title" class="card-image" />
-        
-        <div class="card-details">
-            <h3 class="card-title">{{ product.title }}</h3>
-        
-         <div class="card-footer">
-            <span class="price">${{ product.price }}</span>
-            <button class="add-btn">Add to Cart</button>
-         </div>
-        </div>
+  <div class="card">
+    <div class="image-container">
+      <img :src="product.thumbnail" :alt="product.title" class="card-image" />
     </div>
+    
+    <div class="card-details">
+      <div class="price">${{ product.price }}</div>
+      <h3 class="card-title">{{ product.title }}</h3>
+      <p class="card-brand">{{ product.brand || product.category }}</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+  </div>
 </template>
+
 <script setup>
 defineProps(['product']);
 </script>
 
 <style scoped>
-.card{
-
-    border: 1px solid #eee;
-    border-radius:8px;
-    overflow: hidden;
-    transition: transform 0.2s;
-    background: white;
-    display: flex;
-    flex-direction: column;
+.card {
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 1px solid transparent;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
- .card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
- }
- .card-details{
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-     justify-content: space-between;
-}
-.card-title {
-  font-size: 1.1rem;
-  margin: 0 0 10px 0;
-  color: #333;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.card-footer {
+.image-container {
+  width: 100%;
+  height: 250px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: auto; 
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.card-image {
+  max-width: 100%;
+  max-height: 100%; 
+  object-fit: contain;
+}
+
+.card-details {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #2c3e50;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.card-brand {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .add-btn {
-  background-color: #42b883;
+  margin-top: 10px;
+  background-color: #333; 
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-size: 0.85rem;
   cursor: pointer;
-  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.2s;
 }
 
 .add-btn:hover {
-  background-color: #3aa876;
+  background-color: #000; 
 }
-
-
 </style>
