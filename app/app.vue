@@ -4,6 +4,8 @@
     
     <HeroSection />
     
+    <CampaignSplit />
+    
     <div class="container">
       <h1 class="section-title">Featured Products</h1>
       <div v-if="pending" class="loading">Loading...</div>
