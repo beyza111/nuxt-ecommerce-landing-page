@@ -16,7 +16,9 @@
     <div class="main-header">
       <div class="container main-header-content">
         <div class="logo">
-          <span class="brand-name">watsons</span>
+          <NuxtLink to="/" class="brand-link">
+            <span class="brand-name">watsons</span>
+          </NuxtLink>
         </div>
 
         <div class="search-bar">
@@ -28,10 +30,12 @@
           <div class="user-info">
             <span>Hello, <strong>Beyza</strong></span>
           </div>
-          <div class="cart-icon">
+          
+          <NuxtLink to="/checkout" class="cart-icon">
             🛒
             <span class="badge">2</span>
-          </div>
+          </NuxtLink>
+          
         </div>
       </div>
     </div>
@@ -55,7 +59,6 @@
 </template>
 
 <style scoped>
-
 .site-header {
   font-family: 'Segoe UI', sans-serif;
   background-color: white;
@@ -68,9 +71,8 @@
   padding: 0 20px;
 }
 
-
 .top-bar {
-  background-color: #333; 
+  background-color: #333;
   color: #ccc;
   font-size: 0.75rem;
   padding: 8px 0;
@@ -94,7 +96,6 @@
   color: white;
 }
 
-
 .main-header {
   padding: 20px 0;
 }
@@ -106,10 +107,14 @@
   gap: 20px;
 }
 
+.brand-link {
+  text-decoration: none; 
+}
+
 .brand-name {
   font-size: 2rem;
   font-weight: 900;
-  color: #008080; 
+  color: #008080;
   letter-spacing: -1px;
   text-transform: lowercase;
 }
@@ -151,10 +156,15 @@
   color: #555;
 }
 
+
 .cart-icon {
   position: relative;
   font-size: 1.5rem;
   cursor: pointer;
+  text-decoration: none; 
+  color: inherit; 
+  display: flex;
+  align-items: center;
 }
 
 .badge {
@@ -173,7 +183,6 @@
   font-weight: bold;
 }
 
-
 .nav-bar {
   border-top: 1px solid #eee;
   padding: 15px 0;
@@ -182,7 +191,7 @@
 .nav-bar nav {
   display: flex;
   justify-content: space-between;
-  overflow-x: auto; 
+  overflow-x: auto;
 }
 
 .nav-bar a {
@@ -196,10 +205,9 @@
 }
 
 .nav-bar a:hover, .nav-bar a.active {
-  color: #008080; 
+  color: #008080;
   border-bottom: 2px solid #008080;
 }
-
 
 @media (max-width: 768px) {
   .main-header-content {
@@ -209,7 +217,7 @@
   
   .search-bar {
     width: 100%;
-    order: 3; 
+    order: 3;
   }
   
   .nav-bar nav {
