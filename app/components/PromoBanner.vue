@@ -11,7 +11,7 @@
         <button class="shop-btn">SHOP NOW</button>
       </div>
       
-     <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=500&q=80" alt="Cosmetic Products" class="promo-img">
+      <img src="https://shopping.tallink.com/_next/image?url=http%3A%2F%2Fwwtll018.fleet.zone%3A28152%2Fimages%2Fprod%2F2%2FA%2F8%2F8%2F2A88F427-413F-4878-A222-E347553F1D61_1_big.png&w=3840&q=80" alt="Promo Products" class="promo-img">
     </div>
   </section>
 </template>
@@ -47,6 +47,7 @@
 h2 {
   font-size: 2rem;
   margin: 10px 0 20px;
+  line-height: 1.2;
 }
 
 .discount-badge {
@@ -68,11 +69,25 @@ h2 {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .promo-img {
-  max-height: 300px;
+  max-height: 350px;
+  max-width: 100%; 
   object-fit: contain;
   transform: rotate(-5deg); 
+}
+
+@media (max-width: 768px) {
+  .promo-content {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .promo-img {
+    margin-top: 20px;
+    max-height: 250px;
+  }
 }
 </style>
