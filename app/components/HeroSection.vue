@@ -24,6 +24,10 @@
 </template>
 
 <style scoped>
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 .hero-wrapper {
   position: relative;
   width: 100%;
@@ -107,24 +111,34 @@
   .hero-wrapper {
     height: auto;
     flex-direction: column;
+    display: block;
+    padding-bottom: 40px;
   }
   
   .hero-image-container {
     position: relative;
-    height: 300px;
+    height: 350px;
+    width: 100%;
   }
   
   .content-layer {
-    justify-content: center;
-    padding: 20px;
-    background-color: #fceef2;
+    display: block; 
+    padding: 0 20px; 
+    margin-top: -60px; 
+    width: 100%; 
   }
   
   .white-card {
-    width: 100%;
+    width: 100%; 
     max-width: 100%;
-    box-shadow: none;
+    border-radius: 12px;
     padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    margin: 0 auto;
+  }
+
+  .brand-title {
+    font-size: 1.5rem;
   }
 }
 </style>
